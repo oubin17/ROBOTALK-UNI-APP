@@ -1,7 +1,7 @@
 <template>
   <view class="message-bubble" :class="[type, { error: isError }]" @longpress="handleLongPress">
     <view class="message-content">
-      {{ content }}
+      <text>{{ content }}</text>
       <!-- 错误消息的重试按钮 -->
       <view v-if="isError" class="retry-btn" @tap.stop="handleRetry">
         <text class="retry-text">重试</text>
@@ -87,52 +87,81 @@ const formatTime = (timestamp) => {
 
 <style lang="scss" scoped>
 .message-bubble {
-  max-width: 75%; // 减小宽度防止溢出
-  margin-bottom: 16rpx; // 原来是20rpx
+  max-width: 76%;
+  margin-bottom: 40rpx; // 增加底部外边距，为时间留出更多空间
   position: relative;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  width: fit-content;
 
   &.user {
     align-self: flex-end;
     margin-left: auto;
+    margin-right: 10rpx;
 
     .message-content {
-      background: linear-gradient(135deg, #4A90E2, #6AA9FF);
+      background: #9355e8;
       color: #FFFFFF;
-      border-radius: 20rpx 4rpx 20rpx 20rpx; // 原来是24rpx
-      box-shadow: 0 4rpx 16rpx rgba(74, 144, 226, 0.3);
+      border-radius: 20rpx 4rpx 20rpx 20rpx;
+      box-shadow: 0 2rpx 8rpx rgba(148, 87, 235, 0.2);
+      padding: 14rpx 20rpx; // 将padding移到这里，避免嵌套样式
+      word-break: break-word;
+      word-wrap: break-word;
+      font-size: 26rpx;
+      line-height: 1.5;
+      position: relative;
+      box-sizing: border-box;
+      max-width: 100%;
+      transition: all 0.3s ease;
+      white-space: pre-wrap;
     }
 
     .message-time {
       text-align: right;
       color: rgba(255, 255, 255, 0.6);
-      font-size: 20rpx; // 原来是22rpx
-      margin-top: 4rpx; // 原来是6rpx
-      margin-right: 8rpx; // 原来是10rpx
+      font-size: 20rpx;
+      margin-top: 8rpx; // 增加与消息的间距
+      margin-right: 8rpx;
+      position: absolute;
+      right: 0;
+      bottom: -30rpx; // 增加距离
     }
   }
 
   &.assistant {
     align-self: flex-start;
     margin-right: auto;
+    margin-left: 20rpx;
 
     .message-content {
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: rgba(148, 87, 235, 0.15);
       backdrop-filter: blur(10px);
       color: #FFFFFF;
-      border-radius: 4rpx 20rpx 20rpx 20rpx; // 原来是24rpx
+      border-radius: 4rpx 20rpx 20rpx 20rpx;
       box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(148, 87, 235, 0.2);
+      padding: 14rpx 20rpx; // 将padding移到这里，避免嵌套样式
+      word-break: break-word;
+      word-wrap: break-word;
+      font-size: 26rpx;
+      line-height: 1.5;
+      position: relative;
+      box-sizing: border-box;
+      max-width: 100%;
+      transition: all 0.3s ease;
+      white-space: pre-wrap;
     }
 
     .message-time {
       text-align: left;
       color: rgba(255, 255, 255, 0.6);
-      font-size: 20rpx; // 原来是22rpx
-      margin-top: 4rpx; // 原来是6rpx
-      margin-left: 8rpx; // 原来是10rpx
+      font-size: 20rpx;
+      margin-top: 8rpx; // 增加与消息的间距
+      margin-left: 8rpx;
+      position: absolute;
+      left: 0;
+      bottom: -30rpx; // 增加距离
     }
 
     &.error .message-content {
@@ -141,27 +170,23 @@ const formatTime = (timestamp) => {
     }
   }
 
-  .message-content {
-    padding: 14rpx 20rpx; // 原来是20rpx 28rpx
-    word-break: break-all;
-    word-wrap: break-word;
-    font-size: 26rpx; // 原来是28rpx
-    line-height: 1.5; // 原来是1.6
-    position: relative;
-    box-sizing: border-box;
-    max-width: 100%; // 确保不会溢出
-    transition: all 0.3s ease;
+  // 删除通用的 .message-content 样式，避免样式重叠
+  
+  text {
+    display: inline-block;
+    width: 100%;
+    min-width: 0;
   }
 
   .retry-btn {
-    margin-top: 10rpx; // 原来是14rpx
+    margin-top: 10rpx;
     display: inline-block;
-    padding: 6rpx 16rpx; // 原来是8rpx 20rpx
-    background-color: #4A90E2;
+    padding: 6rpx 16rpx;
+    background-color: #9355e8;
     color: white;
     border-radius: 50rpx;
-    font-size: 20rpx; // 原来是22rpx
-    box-shadow: 0 2rpx 8rpx rgba(74, 144, 226, 0.4);
+    font-size: 20rpx;
+    box-shadow: 0 2rpx 8rpx rgba(148, 87, 235, 0.4);
     transition: all 0.2s ease;
 
     &:active {

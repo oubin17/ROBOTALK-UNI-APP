@@ -17,7 +17,7 @@
         <image class="logo" src="/static/logo.png"></image>
         <view class="logo-glow"></view>
       </view>
-      
+
       <view class="action-area">
         <view class="start-btn" @tap="navigateToChat">
           <text>开始对话</text>
@@ -45,7 +45,7 @@ onMounted(() => {
     const size = Math.random() * 10 + 2;
     const posX = Math.random() * 100;
     const posY = Math.random() * 100;
-    
+
     particle.style.left = `${posX}%`;
     particle.style.top = `${posY}%`;
     particle.style.width = `${size}rpx`;
@@ -60,7 +60,7 @@ onMounted(() => {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, #2e1a4a, #3a0f53);
 }
 
 .background {
@@ -73,7 +73,7 @@ onMounted(() => {
 .circle {
   position: absolute;
   border-radius: 50%;
-  background: rgba(74, 144, 226, 0.1);
+  background: rgba(148, 87, 235, 0.1);
   animation: float 8s infinite ease-in-out;
 
   &.circle-1 {
@@ -99,23 +99,23 @@ onMounted(() => {
     left: 60%;
     animation-delay: -4s;
   }
-  
+
   &.circle-4 {
     width: 250rpx;
     height: 250rpx;
     top: 20%;
     right: 10%;
     animation-delay: -1s;
-    background: rgba(106, 169, 255, 0.08);
+    background: rgba(167, 121, 255, 0.08);
   }
-  
+
   &.circle-5 {
     width: 180rpx;
     height: 180rpx;
     bottom: 30%;
     left: 15%;
     animation-delay: -3s;
-    background: rgba(106, 169, 255, 0.08);
+    background: rgba(167, 121, 255, 0.08);
   }
 }
 
@@ -124,8 +124,8 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(rgba(74, 144, 226, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74, 144, 226, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(148, 87, 235, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 87, 235, 0.1) 1px, transparent 1px);
   background-size: 50rpx 50rpx;
   animation: gridMove 20s linear infinite;
 }
@@ -141,7 +141,7 @@ onMounted(() => {
   position: absolute;
   width: 5rpx;
   height: 5rpx;
-  background-color: rgba(106, 169, 255, 0.6);
+  background-color: rgba(167, 121, 255, 0.6);
   border-radius: 50%;
   animation: particleFloat 15s infinite linear;
   opacity: 0;
@@ -179,7 +179,7 @@ onMounted(() => {
   width: 300rpx;
   height: 300rpx;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(74, 144, 226, 0.3) 0%, rgba(74, 144, 226, 0) 70%);
+  background: radial-gradient(circle, rgba(148, 87, 235, 0.3) 0%, rgba(148, 87, 235, 0) 70%);
   animation: glow 4s infinite alternate ease-in-out;
   z-index: 1;
 }
@@ -191,15 +191,15 @@ onMounted(() => {
 .start-btn {
   position: relative;
   overflow: hidden;
-  background: rgba(74, 144, 226, 0.2);
+  background: rgba(148, 87, 235, 0.2);
   backdrop-filter: blur(10px);
   color: #FFFFFF;
   padding: 24rpx 60rpx;
   border-radius: 50rpx;
   font-size: 32rpx;
-  border: 1px solid rgba(74, 144, 226, 0.3);
+  border: 1px solid rgba(148, 87, 235, 0.3);
   transition: all 0.3s;
-  box-shadow: 0 0 30rpx rgba(74, 144, 226, 0.4);
+  box-shadow: 0 0 30rpx rgba(148, 87, 235, 0.4);
 
   .btn-effect {
     position: absolute;
@@ -209,7 +209,7 @@ onMounted(() => {
     height: 200%;
     background: linear-gradient(45deg,
         transparent,
-        rgba(74, 144, 226, 0.3),
+        rgba(148, 87, 235, 0.3),
         transparent);
     transform: rotate(45deg);
     animation: shine 3s infinite;
@@ -217,33 +217,42 @@ onMounted(() => {
 
   &:active {
     transform: scale(0.98);
-    box-shadow: 0 0 15rpx rgba(74, 144, 226, 0.4);
+    box-shadow: 0 0 15rpx rgba(148, 87, 235, 0.4);
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20rpx);
   }
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
 }
 
 @keyframes glow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.5;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.8;
     transform: scale(1.2);
@@ -254,6 +263,7 @@ onMounted(() => {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(50rpx);
   }
@@ -263,6 +273,7 @@ onMounted(() => {
   0% {
     transform: translateX(-100%) rotate(45deg);
   }
+
   100% {
     transform: translateX(100%) rotate(45deg);
   }
@@ -273,12 +284,15 @@ onMounted(() => {
     transform: translateY(0) translateX(0);
     opacity: 0;
   }
+
   10% {
     opacity: 0.8;
   }
+
   90% {
     opacity: 0.8;
   }
+
   100% {
     transform: translateY(-100vh) translateX(100rpx);
     opacity: 0;

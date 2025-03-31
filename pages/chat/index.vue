@@ -415,7 +415,7 @@ onMounted(() => {
   height: 100vh;
   box-sizing: border-box;
   overflow: hidden;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, #2e1a4a, #3a0f53);
 }
 
 .background {
@@ -428,7 +428,7 @@ onMounted(() => {
 .circle {
   position: absolute;
   border-radius: 50%;
-  background: rgba(74, 144, 226, 0.1);
+  background: rgba(148, 87, 235, 0.1);
   animation: float 8s infinite ease-in-out;
 
   &.circle-1 {
@@ -461,7 +461,7 @@ onMounted(() => {
     top: 20%;
     right: 10%;
     animation-delay: -1s;
-    background: rgba(106, 169, 255, 0.08);
+    background: rgba(167, 121, 255, 0.08);
   }
 
   &.circle-5 {
@@ -470,7 +470,7 @@ onMounted(() => {
     bottom: 30%;
     left: 15%;
     animation-delay: -3s;
-    background: rgba(106, 169, 255, 0.08);
+    background: rgba(167, 121, 255, 0.08);
   }
 }
 
@@ -479,8 +479,8 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(rgba(74, 144, 226, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74, 144, 226, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(148, 87, 235, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 87, 235, 0.1) 1px, transparent 1px);
   background-size: 50rpx 50rpx;
   animation: gridMove 20s linear infinite;
 }
@@ -496,7 +496,7 @@ onMounted(() => {
   position: absolute;
   width: 5rpx;
   height: 5rpx;
-  background-color: rgba(106, 169, 255, 0.6);
+  background-color: rgba(167, 121, 255, 0.6);
   border-radius: 50%;
   animation: particleFloat 15s infinite linear;
   opacity: 0;
@@ -507,7 +507,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   padding: 20rpx 30rpx;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(148, 87, 235, 0.1);
   backdrop-filter: blur(10px);
   box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
   z-index: 10;
@@ -538,7 +538,7 @@ onMounted(() => {
 .chat-messages {
   flex: 1;
   position: relative;
-  padding: 20rpx 30rpx;
+  padding: 20rpx 30rpx 20rpx 12rpx;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 5;
@@ -548,13 +548,14 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  padding-bottom: 20rpx;
+  padding-bottom: 40rpx;
   box-sizing: border-box;
-  padding-right: 10rpx; // 防止右侧被遮挡
+  overflow-x: visible;
+  width: 100%;
 }
 
 .safe-bottom-area {
-  height: 40rpx; // 底部安全距离，防止最后一条消息被输入框遮挡
+  height: 30rpx;
 }
 
 .welcome-message {
@@ -568,14 +569,14 @@ onMounted(() => {
 .welcome-icon {
   width: 100rpx;
   height: 100rpx;
-  background-color: rgba(74, 144, 226, 0.2);
+  background-color: rgba(148, 87, 235, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20rpx;
   position: relative;
-  border: 2rpx solid rgba(74, 144, 226, 0.3);
+  border: 2rpx solid rgba(148, 87, 235, 0.3);
 
   &::before {
     content: "AI";
@@ -590,7 +591,7 @@ onMounted(() => {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(74, 144, 226, 0.6) 0%, rgba(74, 144, 226, 0) 70%);
+  background: radial-gradient(circle, rgba(148, 87, 235, 0.6) 0%, rgba(148, 87, 235, 0) 70%);
   animation: pulse 2s infinite ease-in-out;
   z-index: -1;
 }
@@ -615,11 +616,11 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(148, 87, 235, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 16rpx;
   padding: 16rpx 24rpx;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(148, 87, 235, 0.15);
 }
 
 .tip-item {
@@ -642,22 +643,25 @@ onMounted(() => {
   display: flex;
   margin-top: 30rpx;
   align-self: flex-start;
+  margin-bottom: 10rpx;
 }
 
 .typing-bubble {
-  background-color: rgba(240, 240, 240, 0.2);
+  background-color: rgba(148, 87, 235, 0.15);
   backdrop-filter: blur(5px);
   border-radius: 30rpx 30rpx 30rpx 0;
-  padding: 20rpx 30rpx;
-  max-width: 70%;
+  padding: 14rpx 20rpx;
+  max-width: 76%;
   position: relative;
+  border: 1px solid rgba(148, 87, 235, 0.2);
+  margin-left: 20rpx;
 }
 
 .chat-input-area {
   display: flex;
   align-items: center;
   padding: 12rpx 30rpx;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(148, 87, 235, 0.1);
   backdrop-filter: blur(10px);
   box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -668,7 +672,7 @@ onMounted(() => {
 
 .input-wrapper {
   flex: 1;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(148, 87, 235, 0.15);
   border-radius: 18rpx;
   padding: 0;
   max-height: 160rpx;
@@ -709,7 +713,7 @@ onMounted(() => {
 }
 
 .send-btn-active {
-  background-color: #4A90E2;
+  background-color: #9355e8;
 }
 
 .send-icon {
@@ -728,10 +732,10 @@ onMounted(() => {
   border-radius: 50rpx;
   font-size: 26rpx;
   z-index: 100;
-  animation: fadeIn 0.3s ease-in-out;
+  animation: errorFadeIn 0.3s ease-in-out;
 }
 
-@keyframes fadeIn {
+@keyframes errorFadeIn {
   from {
     opacity: 0;
     transform: translate(-50%, -20rpx);
@@ -740,6 +744,18 @@ onMounted(() => {
   to {
     opacity: 1;
     transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10rpx);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -805,5 +821,48 @@ onMounted(() => {
     animation-delay: #{$i * 0.3}s;
     animation-duration: #{10 + random(10)}s;
   }
+}
+
+.message-bubble {
+  max-width: 76%;
+  padding: 20rpx 30rpx;
+  border-radius: 30rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+  word-break: break-word;
+  transition: all 0.3s ease;
+  transform-origin: bottom left;
+  animation: fadeIn 0.3s ease-out forwards;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+
+  &.user {
+    background: linear-gradient(135deg, #8755e8, #a879ff);
+    color: #ffffff;
+    border-radius: 30rpx 30rpx 0 30rpx;
+    margin-left: auto;
+    margin-right: 10rpx;
+    transform-origin: bottom right;
+  }
+
+  &.ai {
+    background-color: rgba(148, 87, 235, 0.15);
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+    border-radius: 30rpx 30rpx 30rpx 0;
+    border: 1px solid rgba(148, 87, 235, 0.2);
+    margin-left: 20rpx;
+  }
+}
+
+.retry-action,
+.copy-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(148, 87, 235, 0.15);
+  border-radius: 50%;
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 16rpx;
 }
 </style>
