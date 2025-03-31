@@ -3,9 +3,10 @@
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "RoboTalk",
-        "navigationBarBackgroundColor": "#4A90E2",
-        "navigationBarTextStyle": "white"
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
       }
     },
     {
