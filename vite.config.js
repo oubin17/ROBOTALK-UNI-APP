@@ -12,6 +12,7 @@ export default defineConfig({
   },
   // 配置服务器
   server: {
+    base: '/doc-retrieval/', // 添加基础路径前缀
     port: 3000,
     open: true,
     proxy: {
